@@ -1,5 +1,4 @@
-import pytest
-from selene.support.shared import browser, config
+from selene.support.shared import browser
 from selene import be, have
 
 
