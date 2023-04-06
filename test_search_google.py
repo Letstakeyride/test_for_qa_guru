@@ -1,6 +1,8 @@
-from selene.support.shared import browser
+import pytest
+from selene.support.shared import browser, config
 from selene import be, have
 
-browser.open('https://google.com')
-browser.element('[name="q"]').should(be.blank).type('yashaka/selene').press_enter()
-browser.element('[id="search"]').should(have.text('Selene - User-oriented Web UI browser tests in Python'))
+
+def test_open_browser(conf_browser):
+    browser.element('[name="q"]').should(be.blank).type('3213123123123123123214421312').press_enter()
+    browser.element('[id = "result-stats"]').should(have.text("Результатов: примерно 0"))
